@@ -1,398 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PROobject – AI-powered construction workflow for blockchain grants</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+P
+PROobject
+EN
+RU
+AI-assisted construction workflow
 
-    body {
-      background: #0a192f;
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      color: #e2e8f0;
-      line-height: 1.6;
-      padding: 2rem 1.5rem;
-    }
+PROobject — the technical and economic foundation of a construction deal.
+Clear terms. Predictable outcomes.
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: rgba(17, 34, 64, 0.7);
-      backdrop-filter: blur(4px);
-      border-radius: 2rem;
-      padding: 3rem 2.5rem;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
+PROobject turns a request, photo, project, BOQ or defect report into a structured task, relevant questions, a preliminary cost/time/team/risk estimate, execution context and closing documents.
 
-    h1, h2, h3 {
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
+Discuss pilot
+See workflow
+Input
+Request, photo, project, BOQ, defect report, technical task
+User role and task purpose
+Object passport and missing data
+Relevant customer questions
+Preliminary cost, team, timing and risks
+Proposal, execution, acceptance and closing documents
+Recognizable pain
 
-    h1 {
-      font-size: 2.8rem;
-      color: #ffffff;
-      margin-bottom: 0.3rem;
-    }
+The job is already there. How do you determine the real scope and a defensible price?
+For a solo master, a 2-5 person crew, a small contractor or a customer, the hard part often starts after the request is received. The inputs are scattered, the work boundaries are unclear, and the price has to be named before all conditions are understood.
 
-    h1 span {
-      color: #facc15;
-    }
+Photos, descriptions, projects and tables rarely turn into a ready price by themselves.
+Materials, operations, people, timing, complications and expenses can be easy to miss.
+The contractor is afraid to underprice and lose money, or overprice and lose the customer.
+The customer does not always understand what is included and where extra charges may appear.
+Why a simple calculator is not enough
 
-    .subhead {
-      font-size: 1.2rem;
-      color: #94a3b8;
-      margin-bottom: 2rem;
-      border-left: 4px solid #facc15;
-      padding-left: 1rem;
-    }
+Price is not only quantity times rate.
+Real work depends on site conditions and responsibility boundaries. Height, tight access, active systems, restricted facilities, shutdowns, lifting, buried utilities, equipment, travel, mobilization, consumables, documentation and testing can change labor, risk and price.
 
-    h2 {
-      font-size: 2rem;
-      color: #facc15;
-      margin: 2.5rem 0 1rem 0;
-      border-bottom: 2px solid rgba(250, 204, 21, 0.2);
-      padding-bottom: 0.5rem;
-    }
+Site conditions
+Access and shutdowns
+Team and equipment
+Documentation and tests
+Responsibility boundaries
+How PROobject works
 
-    h3 {
-      font-size: 1.3rem;
-      color: #ffffff;
-      margin: 1.5rem 0 0.5rem 0;
-    }
+From source data to deal completion.
+PROobject supports a construction task across the working cycle: from source-data review and alignment of conditions to execution, acceptance, settlement and closing documents.
 
-    p, li {
-      color: #cbd5e1;
-      margin-bottom: 1rem;
-    }
+01
+Role and purpose
+First, PROobject identifies who is using it and what result is needed: quick decision, estimate, proposal, customer roadmap or comparison.
 
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
+02
+Source data
+The user enters or uploads a request, description, photos, project, BOQ, defect report or technical task.
 
-    ul li::before {
-      content: "▹ ";
-      color: #facc15;
-    }
+03
+Object passport and known scope
+Known work scope, conditions, documents, deadlines, budget hints and requirements are structured into one object record.
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin: 1.5rem 0;
-    }
+04
+Gaps, risks and factors
+The system highlights missing data, site risks, complications, work boundaries and responsibility zones that affect labor, duration and cost.
 
-    .card {
-      background: rgba(255, 255, 255, 0.03);
-      padding: 1.5rem;
-      border-radius: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: all 0.2s;
-    }
+05
+Questions and customer message
+PROobject prepares relevant clarification questions and a professional customer message, skipping what is already clear from the request, photos, BOQ, defect report or project.
 
-    .card:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(250, 204, 21, 0.3);
-    }
+06
+Answers and boundaries recorded
+Customer answers are saved as source data, assumptions, work boundaries and responsibility zones.
 
-    .card h3 {
-      margin-top: 0;
-      color: #facc15;
-    }
+07
+Defensible estimate
+Works, materials, team, timing, expenses, risks and price range are calculated with visible assumptions. Better inputs narrow the range but do not make it a guaranteed final estimate.
 
-    .badge {
-      display: inline-block;
-      background: rgba(250, 204, 21, 0.15);
-      color: #facc15;
-      padding: 0.2rem 1rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.5rem;
-    }
+08
+Agreement and execution tracking
+Proposal, response, contract, stages, schedule, condition changes and completed work confirmations are kept in the same object context.
 
-    .cta-button {
-      display: inline-block;
-      background: #facc15;
-      color: #0a192f;
-      font-weight: 700;
-      padding: 0.8rem 2.2rem;
-      border-radius: 40px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: 0.2s;
-      margin-top: 0.5rem;
-      border: none;
-      cursor: pointer;
-    }
+09
+Acceptance, settlement and closing
+Completion acts, closing and as-built documents, stage confirmations, final settlement status and the object archive close the deal loop.
 
-    .cta-button:hover {
-      background: #e6b800;
-      transform: scale(1.02);
-    }
+Roadmap module: Documents
 
-    .footer {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.9rem;
-      color: #64748b;
-    }
+A dedicated document module follows the actual deal scenario.
+PROobject is planned to include a separate Documents module: not a generic library, but a role-, object-, work- and stage-aware document base connected to the object card.
 
-    .footer a {
-      color: #94a3b8;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: 0.2s;
-    }
+Prepared by context
+Requests for source data, questionnaires, technical notes, BOQs, defect reports, proposals, estimates and work plans are selected by scenario.
 
-    .footer a:hover {
-      color: #facc15;
-      border-bottom-color: #facc15;
-    }
+Linked to the object card
+Documents can use known details, scope, stages and responsibility boundaries, with versions, statuses, change log and links between documents.
 
-    .chain-badge {
-      display: inline-block;
-      background: rgba(72, 187, 244, 0.15);
-      color: #48bbf4;
-      padding: 0.3rem 1.2rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      margin-bottom: 1rem;
-      margin-right: 0.5rem;
-    }
+Tracked through the deal
+The module tracks what is required, prepared, agreed, signed or missing: from contracts and addenda to as-built, acceptance, KS-2/KS-3 where applicable, warranty and archive.
 
-    .chain-badge.orange {
-      background: rgba(250, 204, 21, 0.15);
-      color: #facc15;
-    }
+This is part of the product roadmap. Templates and reference materials do not replace dedicated legal or technical review where it is required; future signing and handover flows require separate legal and technical design.
 
-    @media (max-width: 768px) {
-      .container {
-        padding: 1.5rem 1rem;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-      .grid-2 {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-      .subhead {
-        font-size: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
+Result for both sides
 
-<div class="container">
+One environment from inputs and price to closing documents.
+We do not position one side against the other. We create a clear technical and economic foundation on which customers and contractors can align expectations and work toward the intended result.
 
-  <!-- УНИВЕРСАЛЬНЫЕ БЕЙДЖИ -->
-  <div>
-    <span class="chain-badge">⚡ Exploring NEAR</span>
-    <span class="chain-badge orange">⚡ Exploring Algorand</span>
-    <span class="chain-badge">⚡ Open to other ecosystems</span>
-  </div>
+Contractor
+Understands scope, costs, team, timing and risks, then protects expected profit with a reasoned price instead of guessing.
 
-  <!-- HERO -->
-  <h1>PRO<span>object</span></h1>
-  <div class="subhead">
-    AI‑powered construction workflow — from a messy request to a clear deal foundation
-  </div>
+Shared basis
+If source data is insufficient or the economics do not fit, it becomes visible before the contract. The same environment can then support agreement, execution, acceptance, settlement and closing documents.
 
-  <p style="font-size:1.15rem;">
-    We help contractors and customers build a shared technical and economic basis for construction projects.
-    Our platform turns photos, drawings, BOQs, defect lists and text requests into an <strong>object passport</strong>,
-    identifies missing data, highlights risks, and generates a preliminary scope, crew, schedule and price range.
-  </p>
+Customer
+Gets a clearer scope, expected result, budget range, stages and questions for comparing offers by the same conditions.
 
-  <a href="#contact" class="cta-button">Get in touch →</a>
+Why we can build it
 
-  <!-- ПРОБЛЕМА -->
-  <h2>Problem</h2>
-  <p>
-    Construction work often starts with incomplete and fragmented information. Contractors waste hours deciphering
-    vague requests, while customers don't know what is really included in the price. Lead marketplaces provide
-    contacts, but they do not resolve the uncertainty that follows: missing data, site conditions, risk allocation,
-    and price justification. This leads to disputes, delays, cost overruns, and failed deals.
-  </p>
+Not just AI. Full-cycle construction experience.
+Generic AI can write text. PROobject is built on 20 years of hands-on experience and must know what to ask, what affects price and where a real object usually loses money and time.
 
-  <!-- РЕШЕНИЕ -->
-  <h2>Solution</h2>
-  <p>
-    <strong>PROobject</strong> is an AI‑assisted workflow platform that structures incoming requests into a
-    decision-ready package. It does not replace professional engineers, but it narrows the initial guesswork and
-    creates a common language for both sides.
-  </p>
-  <div class="grid-2">
-    <div class="card">
-      <div class="badge">Input</div>
-      <p>Text, photos, drawings, BOQs, defect reports, spreadsheets</p>
-    </div>
-    <div class="card">
-      <div class="badge">Output</div>
-      <p>Object passport, clarification questions, risk cues, preliminary estimate, proposal draft</p>
-    </div>
-  </div>
+Permits and source documentation.
+Engineering network and pipeline design.
+BOQs, estimates, commercial proposals and contractor economics.
+Contracts, correspondence and customer coordination.
+Installation organization and hands-on field practice.
+Technical office work, as-built documentation, testing and handover.
+This experience becomes product logic: clarification questions, source-data checks, risk categories and the structure of the preliminary estimate process. Legal documents and settlement mechanics require dedicated legal review before production use.
 
-  <!-- КАК ЭТО РАБОТАЕТ -->
-  <h2>Workflow</h2>
-  <ul>
-    <li>User role and purpose defined</li>
-    <li>Source materials uploaded</li>
-    <li>Object passport generated</li>
-    <li>Missing data and site factors detected</li>
-    <li>Clarification questions prepared</li>
-    <li>Updated scope, team, schedule, risks and price range</li>
-    <li>Proposal, contract-support document or next workflow artifact</li>
-  </ul>
+Not a response marketplace first
 
-  <!-- РЫНОК -->
-  <h2>Market opportunity</h2>
-  <p>
-    The global construction software market is projected to reach <strong>$18.4 billion</strong> by 2028.
-    In Russia, ConTech is estimated at <strong>500 billion RUB</strong>, with our target segment
-    (small to mid‑size contractors and engineering firms) accounting for roughly <strong>50 billion RUB</strong>.
-  </p>
+First: analyze, clarify, estimate, document. Later: match.
+Profi.ru, Vsem Podryad, Biddaro and similar services help users find requests or contacts. PROobject starts after the request appears: it turns fragmented inputs into a managed engineering and commercial process. A future marketplace can connect customers and contractors around a structured task and transparent conditions, not only around a contact.
 
-  <!-- ТРАКШН -->
-  <h2>Traction &amp; current status</h2>
-  <div class="grid-2">
-    <div class="card">
-      <h3>✅ Functional MVP</h3>
-      <p>Local web prototype with core workflow: role selection, source input, object passport, risk detection, and output generation.</p>
-    </div>
-    <div class="card">
-      <h3>🌐 Public page</h3>
-      <p><a href="https://pro-object-workflow.vercel.app/" target="_blank" style="color:#facc15;">pro-object-workflow.vercel.app</a></p>
-    </div>
-    <div class="card">
-      <h3>📄 Grant materials</h3>
-      <p>Prepared one-pager, pitch deck outline, English demo video, and disclosure protocol.</p>
-    </div>
-    <div class="card">
-      <h3>🤝 Pilots in progress</h3>
-      <p>Active discussions with SaaS Factory and Foundamental; exploring pilot opportunities with network organisations.</p>
-    </div>
-  </div>
+Product depth
 
-  <!-- БИЗНЕС-МОДЕЛЬ -->
-  <h2>Business model</h2>
-  <ul>
-    <li><strong>Subscription</strong> – tiered plans for masters, small teams, and B2B clients</li>
-    <li><strong>Transaction fee</strong> – for structured matching and protected deal workflows</li>
-    <li><strong>Expert services</strong> – advanced analysis, document review, and dispute support</li>
-  </ul>
+From engineering assistant to construction deal infrastructure.
+PROobject develops step by step: each next capability builds on a useful working scenario and expands it without turning the public roadmap into a technical specification.
 
-  <!-- КОНКУРЕНТНОЕ ПРЕИМУЩЕСТВО -->
-  <h2>Why us</h2>
-  <ul>
-    <li><strong>20 years of real engineering practice</strong> behind the logic – not just generic AI</li>
-    <li><strong>Industry memory</strong> – rules built on actual projects, not theoretical assumptions</li>
-    <li><strong>End‑to‑end support</strong> – from request analysis to proposal, contract, and project tracking</li>
-    <li><strong>Privacy‑by‑design</strong> – confidential documents remain off‑chain, blockchain used only for verification</li>
-  </ul>
+Review and estimate
+Role, source data, known scope, risks, questions, preliminary cost, timing and team.
 
-  <!-- БЛОКЧЕЙН-СЛОЙ (УНИВЕРСАЛЬНЫЙ) -->
-  <h2>Blockchain layer (ecosystem-agnostic)</h2>
-  <p>
-    We are building a public‑safe proof module that demonstrates how a construction document fingerprint
-    and milestone status can be recorded on a public testnet. We are actively exploring <strong>NEAR</strong>
-    and <strong>Algorand</strong> as potential ecosystems, and we remain open to other networks that offer
-    strong grant programs and technical fit for our use case.
-  </p>
-  <ul>
-    <li><strong>Document fingerprinting</strong> – cryptographically verify that a document existed at a specific time</li>
-    <li><strong>Milestone verification</strong> – record status changes and approvals in a tamper‑evident way</li>
-    <li><strong>No real funds or tokens</strong> – all data is synthetic and no escrow is claimed in the MVP</li>
-    <li><strong>Open source</strong> – the proof module will be published as open source, aligning with grant requirements</li>
-  </ul>
+Documents and object tracking
+Proposals, contracts, schedules, acts, as-built and closing documents, versions and change log.
 
-  <!-- ПОЧЕМУ МЫ ПОДХОДИМ ДЛЯ ГРАНТОВ -->
-  <h2>Why we are a strong grant candidate</h2>
-  <ul>
-    <li><strong>Real problem, real solution</strong> – we address a $18B+ global market with a working MVP</li>
-    <li><strong>Proven team</strong> – 20 years of domain expertise, not just theoretical knowledge</li>
-    <li><strong>Open source commitment</strong> – our blockchain proof module will be publicly available</li>
-    <li><strong>Ecosystem flexibility</strong> – we are ready to build on NEAR, Algorand, or any chain with strong grant support</li>
-    <li><strong>Measurable outcomes</strong> – we already have pilot discussions and a clear roadmap</li>
-  </ul>
+Party interaction and transparent deal
+Customers and contractors align terms, stages, acceptance and, in the future, staged settlement through permitted infrastructure.
 
-  <!-- КОМАНДА -->
-  <h2>Team</h2>
-  <div class="grid-2">
-    <div class="card">
-      <h3>Vitaliy Tolkov</h3>
-      <p>Founder. 20 years in industrial heat‑power engineering, networks, design, estimates, installation, as‑built documentation, and handover. Combines technical education with hands‑on contracting and project management.</p>
-    </div>
-    <div class="card">
-      <h3>Nikita Tolkov</h3>
-      <p>Developer. Holds a vocational qualification in programming and is continuing his education in artificial intelligence and technology. Responsible for product implementation, structured data workflows, and test automation.</p>
-    </div>
-  </div>
+International development and localization
+Engineering systems are PROobject's first product vertical, not the limit of the platform. The product can expand through expert modules into general construction, concrete, finishing, roofing and other trades, while language, currency, regulations, document forms, payments and legal requirements are localized by market.
 
-  <!-- ДОРОЖНАЯ КАРТА -->
-  <h2>Roadmap</h2>
-  <ul>
-    <li><strong>Q3–Q4 2026</strong> – Complete MVP refinements, launch first pilots with 3–5 contractors</li>
-    <li><strong>Q1 2027</strong> – Integrate blockchain proof module on testnet (NEAR / Algorand / other), publish open‑source repository</li>
-    <li><strong>Q2 2027</strong> – Expand pilot program, introduce subscription plans, collect traction metrics</li>
-    <li><strong>Q3–Q4 2027</strong> – Begin structured matching, explore protected deal workflows with legal and compliance review</li>
-  </ul>
+PROobject starts with a clear answer to "what needs to be done here and what should it cost" and can grow into an environment where parties find each other, align terms, work through documents, accept stages and settle transparently. Future staged settlement can be supported only through permitted payment infrastructure and after legal, security and compliance design. The MVP does not try to implement the whole market at once, but the architecture should not require rebuilding the product from scratch.
 
-  <!-- ЗАПРОС (THE ASK) -->
-  <h2>What we are looking for</h2>
-  <ul>
-    <li><strong>Grant support</strong> – from NEAR Foundation, Algorand Foundation, or similar programs</li>
-    <li><strong>Accelerator programs</strong> – such as NEAR Horizon, Algorand’s accelerator, or other ConTech-focused initiatives</li>
-    <li><strong>Pilot partners</strong> – contractors, engineering firms, and customers for real‑world validation</li>
-    <li><strong>Technical mentorship</strong> – in SaaS, ConTech, document workflow, and secure infrastructure</li>
-  </ul>
+Payment for useful output
 
-  <!-- КОНТАКТЫ -->
-  <h2 id="contact">Contact</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem;">
-    <div>
-      <strong style="color:#fff;">Vitaliy Tolkov</strong><br />
-      <span style="color:#94a3b8;">Founder</span><br />
-      <a href="mailto:vitalijtolkov487@gmail.com" style="color:#facc15;">vitalijtolkov487@gmail.com</a>
-    </div>
-    <div>
-      <strong style="color:#fff;">Nikita Tolkov</strong><br />
-      <span style="color:#94a3b8;">Developer</span><br />
-      <a href="mailto:ntolkov06@gmail.com" style="color:#facc15;">ntolkov06@gmail.com</a>
-    </div>
-    <div>
-      <strong style="color:#fff;">Links</strong><br />
-      <a href="https://pro-object-workflow.vercel.app/" target="_blank" style="color:#facc15;">Public page (old)</a><br />
-      <a href="https://vk.com/inzhiniring_proobekt" target="_blank" style="color:#facc15;">VK</a><br />
-      <a href="https://max.ru/channel_inzhiniring_proobekt" target="_blank" style="color:#facc15;">MAX</a>
-    </div>
-  </div>
+No artificial paywall around basic clarity.
+Manual input
+Basic path: the user enters volumes, materials and conditions manually and gets a useful preliminary structure.
 
-  <div class="footer">
-    <span>&copy; 2026 PROobject</span>
-    <span>
-      <a href="#top">↑ Back to top</a>
-    </span>
-  </div>
+Photo and document analysis
+Paid intelligent processing saves time: photos, projects, BOQs and defect reports influence questions, risks and estimate confidence.
 
-</div>
+Extended estimate and documents
+Next level: fuller estimate, response draft, proposal outline, customer roadmap or document pack for a professional next step.
 
-</body>
-</html>
+Accessible by design
+
+Professional logic without bureaucratic friction.
+The interface should use clear field names, short profile questions and a compact glossary for terms such as BOQ, technical task, as-built documentation, technical office and completion documents. The public interface avoids personal author labels; future users work under registered accounts or nicknames, while internal authorship and version history remain in the project records.
+
+Security and privacy
+Confidential files stay off-chain. The architecture is designed around data minimization, role-based access, encryption, event audit, version history, secure uploads, backups and AI-output controls.
+
+Verifiable digital record, not technology for its own sake
+Future integrations may use neutral digital fixation of key events, document fingerprints and status records. No token or real-funds custody is promised in the MVP.
+
+Current status
+A local MVP and public proof materials are being prepared for pilots, grants and partner conversations using public-safe or synthetic data.
+
+Pilot, partnership, grant, investment
+
+Pilot the workflow with real requests.
+PROobject is open to focused pilots with masters, crews, contractors and customers: starting with real requests and price clarity, then moving toward documents, stages, acceptance and transparent settlement logic. The page is a public product proof, not a disclosure of the internal calculation base.
+
+Vitaliy Tolkov
+Founder, domain expert
+
+vitalijtolkov487@gmail.com
+Nikita Tolkov
+Developer
+
+ntolkov06@gmail.com
+Public disclosure boundary: this page does not disclose internal formulas, coefficients, prompts, matching or scoring logic, real customer documents, real case database or private roadmap. Preliminary outputs are decision-support only and do not replace design, official estimates, contracts, legal review or professional on-site inspection.
+
